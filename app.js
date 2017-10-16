@@ -40,8 +40,9 @@ var refresh = function() {
     multipl.innerHTML(multipClic + " & " + multipTime);
 }
 
-var cookieCLic = function() {
-    console.log("coucou");
+var cookieCLic = function(event) {
+    event.preventDefault();
+    document.write("coucou");
     myMoney += (1 * multipClic);
     
     refresh();
@@ -69,5 +70,5 @@ var buyItem = function(param) {
     refresh();
 }
 
-cookie.onclick = cookieCLic();
+cookie.addEventListener("click", cookieCLic());
 document.getElementById("Pioche").onclick = buyItem(Pioche);
