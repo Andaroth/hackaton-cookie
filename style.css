@@ -1,0 +1,12 @@
+div {
+    display: block;
+    border: 1px solid black;
+    
+    text-align: center;
+}
+
+div#cookie {
+}
+img#cookie {
+    display: block;
+    margin: 0 auto;
