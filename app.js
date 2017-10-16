@@ -1,3 +1,7 @@
+var cookie = document.getElementById("cookie_clicker");
+var score = document.getElementById("score");
+var multipl = document.getElementById("multipl");
+
 var myMoney = 0; // start money
 var multipClic = 1; // clic earn multiplicator
 var multipTime = 0; // time earn multiplicator
@@ -13,7 +17,7 @@ var shop = [{
 },
 {
     name:"Pelle",
-    multi: 2,
+    multi: 1.5,
     price: 15,
     type: 1,
 },
@@ -22,14 +26,22 @@ var shop = [{
 }
 ] // list of available items
 
-function cookieCLic() {
+var refresh = function() {
+    score.innerHTML(myMoney);
+    multipl.innerHTML(multipClic + " & " + multipTime);
+}
+
+var cookieCLic = function() {
+    console.log("coucou");
     myMoney += (1 * multipClic);
 }
 
-function buyItem(item) {
-    if (myMoney > shop.item.price)
+var buyItem = function(param) {
+    var name = param;
+    console.log("oui");
+    /*if (myMoney > shop.name.price)
     {
-        myMoney = myMoney - (shop.item.price);
+        myMoney = myMoney - (shop.name.price);
         
         switch (shop.item.type) {
             case 0: // Si type 0
@@ -42,6 +54,8 @@ function buyItem(item) {
                 console.log("Error !!");
                 break;
         }   
-    }
+    }*/
 }
 
+cookie.onclick = cookieCLic();
+document.getElementById("Pioche").onclick = buyItem(Pioche);
