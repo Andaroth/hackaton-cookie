@@ -43,6 +43,8 @@ var refresh = function() {
 var cookieCLic = function() {
     console.log("coucou");
     myMoney += (1 * multipClic);
+    
+    refresh();
 }
 
 var buyItem = function(param) {
@@ -64,6 +66,7 @@ var buyItem = function(param) {
                 break;
         }   
     }*/
+    refresh();
 }
 
 cookie.onclick = cookieCLic();
