@@ -1,11 +1,15 @@
+body{
+  background-color: #323d5a;
+}
 div {
     display: block;
     border: 1px solid black;
     text-align: center;
 }
 
+
 div#cookie {
 }
 img#cookie {
     display: block;
-    margin: 0 auto;
+    margin: 0 aut
