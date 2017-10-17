@@ -6,30 +6,32 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header class="box">
-        <h1>Cookie /master</h1>
-        <p id="score">Votre argent apparaîtra ici</p>
-    </header>
-    <div id="cookie" class="box">
-        <a href="#cookie_clicker" id="cookie_clicker"><img id="iloveyou" alt="cookie" src="./cookie_gimp.png" /></a>
-        <h2>Cliquez sur le cookie !</h2>
-        <p id="multiplicator">Vos bonus apparaîtront ici</p>
-    </div>
-    <div id="shop" class="box">
-        <ul id="buy">
-           <li>
-                <button id="1" type="button" name="button" value="Pioche">Je veux acheter une pioche (Prix:<span id="piocheprix">10</span>)</button>
-           </li>
-            <li>
-                <button id="2" type="button" name="button"  value="Pelle">Je veux acheter une pelle (Prix:<span id="pelleprix">50</span>)</button>
-            </li>
-            <li>
-                <button id="3" type="button" name="button"  value="Foreuse">Je veux acheter une foreuse (Prix:<span id="foreuseprix">350</span>)</button>
-            </li>
-            <li>
-                <button id="4" type="button" name="button"  value="Pelleteuse">Je veux acheter une pelleteuse (Prix:<span id="pelletprix">500</span>)</button>
-            </li>
-        </ul>
+    <div id="all">
+        <header class="box">
+            <h1>Cookie /master</h1>
+            <p id="score">Votre argent apparaîtra ici</p>
+        </header>
+        <div id="cookie" class="box">
+            <a href="#cookie_clicker" id="cookie_clicker"><img id="iloveyou" alt="cookie" src="./cookie.png" /></a>
+            <h2>Cliquez sur le cookie !</h2>
+            <p id="multiplicator">Vos bonus apparaîtront ici</p>
+        </div>
+        <div id="shop" class="box">
+            <ul id="buy">
+               <li>
+                    <button id="1" type="button" name="button" value="Pioche">Acheter une brioche<br/>(Prix:<span id="piocheprix">10</span>)</button>
+               </li>
+                <li>
+                    <button id="2" type="button" name="button"  value="Pelle">Acheter un croissant<br/>(Prix:<span id="pelleprix">50</span>)</button>
+                </li>
+                <li>
+                    <button id="3" type="button" name="button"  value="Foreuse">Acheter un four<br/>(Prix:<span id="foreuseprix">350</span>)</button>
+                </li>
+                <li>
+                    <button id="4" type="button" name="button"  value="Pelleteuse">Acheter un lance-flamme<br/>(Prix:<span id="pelletprix">500</span>)</button>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <script src="./app.js"></script>
