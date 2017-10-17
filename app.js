@@ -7,16 +7,16 @@ var buttonClicker = cookieClicker.getElementsByTagName("button");
 var scoreZone = document.getElementById("score");
 var multiZone = document.getElementById("multiplicator");
 
-var button1 = document.getElementById("1");
-var button2 = document.getElementById("2");
-var button3 = document.getElementById("3");
-var button4 = document.getElementById("4");
+var button1 = document.getElementById("brioche");
+var button2 = document.getElementById("croissant");
+var button3 = document.getElementById("four");
+var button4 = document.getElementById("lance-flamme");
 
 var shop = [
-    {name:"Pioche",price:10,multi:2,type:0},
-    {name:"Pelle",price:50,multi:3,type:0},
-    {name:"Foreuse",price:350,multi:4,type:1},
-    {name:"Pelleteuse",price:500,multi:5,type:1}
+    {name:"Brioche",price:10,multi:2,type:0},
+    {name:"Croissant",price:50,multi:3,type:0},
+    {name:"Four",price:350,multi:4,type:1},
+    {name:"Lance-flamme",price:500,multi:5,type:1}
 ];
 
 function addByTime(multiTime) {
@@ -29,15 +29,12 @@ function addByTime(multiTime) {
 
 function refreshDOM() {
     scoreZone.innerHTML = ("Score : " + score);
-    multiZone.innerHTML = ("Multiplicateur : " + multip + " || ByTime : " + multiByTime);
+    multiZone.innerHTML = ("Multiplicateur : " + multip + " || Cookie/s : " + multiByTime);
 }
 
 function buyItem(chercherDans) {
-    console.log("buy");
     var prixItem = shop[chercherDans].price;
     var typeObjet = shop[chercherDans].type;
-    
-    console.log("prix de l'item : " + prixItem);
     
     if (score >= prixItem) { // Si t'as le fric
         
@@ -57,8 +54,7 @@ function buyItem(chercherDans) {
     } // SI t'as pas le fric
     else 
     {
-        console.log("Saleté de pauvre !");
-        
+        multiZone.innerHTML = "Pas d'argent ? Mangez un bon cookie !";
     }
 }
 
@@ -78,94 +74,19 @@ function initialize() {
     
     button1.addEventListener("click", function() {
         buyItem(0);
-        document.getElementById("piocheprix").innerHTML = shop[0].price;
+        document.getElementById("brioche-prix").innerHTML = shop[0].price;
     });
     button2.addEventListener("click", function() {
         buyItem(1);
-        document.getElementById("pelleprix").innerHTML = shop[1].price;
+        document.getElementById("croissant-prix").innerHTML = shop[1].price;
     });
     button3.addEventListener("click", function() {
         buyItem(2);
-        document.getElementById("foreuseprix").innerHTML = shop[2].price;
+        document.getElementById("four-prix").innerHTML = shop[2].price;
     });
     button4.addEventListener("click", function() {
         buyItem(3);
-        document.getElementById("pelletprix").innerHTML = shop[3].price;
+        document.getElementById("lance-flamme-prix").innerHTML = shop[3].price;
     });
 }
 initialize(); 
-/*var cookie = document.getElementById("cookie_clicker");
-var score = document.getElementById("score");
-var multipl = document.getElementById("multipl");
-
-var myMoney = 0; // start money
-var multipClic = 1; // clic earn multiplicator
-var multipTime = 0; // time earn multiplicator
-var multipPrice = 1.5; // change the item's price
-
-var timer = 100; // in milliseconds
-
-var shop = [{
-    name:"Pioche",
-    multi: 1.5,
-    price: 10,
-    type: 0
-},
-{
-    name:"Pelle",
-    multi: 1.5,
-    price: 15,
-    type: 0
-},
-{
-    name:"Foreuse",
-    multi: 1.5,
-    price: 30,
-    type: 1
-},
-{
-    name:"Perceuse",
-    multi: 1.5,
-    price: 20,
-    type: 1
-}
-] // list of available items
-
-var refresh = function() {
-    console.log(">> refresh");
-    score.innerHTML(myMoney);
-    multipl.innerHTML(multipClic + " & " + multipTime);
-}
-
-var cookieCLic = function() {
-    console.log("<< click on cookie");
-    myMoney += (1 * multipClic);
-    
-    refresh();
-}
-
-var buyItem = function(param) {
-    console.log("<< clic on item " + param);
-    var item = param;
-    console.log("oui");
-    if (myMoney >= shop.item.price)
-    {
-        myMoney = myMoney - (shop.item.price);
-        
-        switch (shop.item.type) {
-            case 0: // Si type 0
-
-                break;
-            case 1: // Si type 1
-
-                break;
-            default:
-                console.log("Error !!");
-                break;
-        }   
-    }
-    refresh();
-}
-
-cookie.onclick = cookieCLic();
-document.getElementById("Pioche").onclick = buyItem(Pioche);*/

@@ -17,7 +17,7 @@ h1 {
     display: block;
     background: rgba(255,255,255,.7);
     text-align: center;
-    max-width: 600px;
+    max-width: 500px;
     border-radius: 4px;
     margin: 15px auto;
     color: black;
@@ -30,18 +30,13 @@ h1 {
     padding: 10px;
     margin: 0;
 }
-#cookie {
-    padding: 20px 0;
-}
-#cookie * {
-    margin: 15px auto;
-}
 #cookie_clicker {
     display: block;
-    transition: all .25s cubic-bezier(.68,-0.55,.27,1.55);
     width: 300px;
     height: 300px;
+    margin: 0 auto;
     border-radius: 50%;
+    transition: all .25s cubic-bezier(.68,-0.55,.27,1.55);
 }
 #cookie_clicker:hover {
     transform: scale(.9);
@@ -56,6 +51,7 @@ h1 {
 #shop ul {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     margin: 0;
     padding-left: 0;
     list-style: none;
@@ -65,10 +61,22 @@ h1 {
 }
 button {
     height: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all .25s cubic-bezier(.68,-0.55,.27,1.55);
 }
 button span {
     font-style: italic;
 }
 button:hover {
     cursor: pointer;
+    transform: scale(.9);
+}
+.multi {
+    background-color: sandybrown;
+    color: chocolate;
+}
+.time {
+    background-color: firebrick;
+    color: orange;
 }
