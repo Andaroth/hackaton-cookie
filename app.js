@@ -21,7 +21,7 @@ var shop = [
 
 function addByTime(multiTime) {
     setInterval( function() {
-        score = score + (1*multiByTime); // J'add (1 * le multi) au score
+        score = score + (1*multiTime); // J'add (1 * le multi) au score
         console.log("Argent " + score);
         refreshDOM();
     }, 1000);
