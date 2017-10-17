@@ -81,7 +81,7 @@ function initialize() {
     });
     button2.addEventListener("click", function() {
         buyItem(1);
-        document.getElementById("pelletprix").innerHTML = shop[1].price;
+        document.getElementById("pelleprix").innerHTML = shop[1].price;
     });
     button3.addEventListener("click", function() {
         buyItem(2);
