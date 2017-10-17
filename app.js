@@ -1,6 +1,6 @@
 var score = 0;
 var multip = 1;
-var multiByTime = 1;
+var multiByTime = 0;
 var cookieClicker = document.getElementById("cookie_clicker");
 var buttonClicker = cookieClicker.getElementsByTagName("button");
 
@@ -77,15 +77,19 @@ function initialize() {
     
     button1.addEventListener("click", function() {
         buyItem(0);
+        document.getElementById("piocheprix").innerHTML = shop[0].price;
     });
     button2.addEventListener("click", function() {
         buyItem(1);
+        document.getElementById("pelletprix").innerHTML = shop[1].price;
     });
     button3.addEventListener("click", function() {
         buyItem(2);
+        document.getElementById("foreuseprix").innerHTML = shop[2].price;
     });
     button4.addEventListener("click", function() {
         buyItem(3);
+        document.getElementById("pelletprix").innerHTML = shop[3].price;
     });
 }
 initialize(); 
