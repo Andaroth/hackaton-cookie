@@ -1,3 +1,41 @@
+var score = 0;
+var multip = 1;
+var cookieClicker = document.getElementById("cookie_clicker");
+/*var buttonClicker = document.getElementsByTagName("button");*/
+var button1 = document.getElementById("1");
+var button2 = document.getElementById("2");
+var button3 = document.getElementById("3");
+var button4 = document.getElementById("4");
+
+var shop = [
+    {name:"Pioche",price:10,multi:1.5},
+    {name:"Pelle",price:50,multi:2.5},
+    {name:"Foreuse",price:350,multi:3},
+    {name:"Pelleteuse",price:500,multi:5}
+];
+
+function buyItem() {
+    console.log("buy");
+    var prixItem = shop.price;
+    if (score >= prixItem) {
+        score = score - prixItem;
+        multip = shop.objet.multi;
+    }
+}
+
+function initialize() {
+    // Si je clique sur "cookieClicker", 
+    cookieClicker.addEventListener("click", function() {
+        score++; // +1 au score
+        console.log("Score = " + score);
+    });
+    
+    button1.addEventListener("click", function() {
+        buyItem("Pioche");
+        // console.log(parametre);
+    });
+}
+initialize(); 
 /*var cookie = document.getElementById("cookie_clicker");
 var score = document.getElementById("score");
 var multipl = document.getElementById("multipl");
