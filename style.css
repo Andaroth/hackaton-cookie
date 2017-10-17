@@ -32,15 +32,14 @@ div#cookie * {
 a#cookie_clicker {
     display: block;
     transition: all .25s cubic-bezier(.68,-0.55,.27,1.55);
+    width: 420px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,.7);
 }
 a#cookie_clicker:hover {
     transform: rotate(60deg);
 }
-a#cookie_clicker:target {
-    transform: scale(.925);
-}
-
-a, img {
+img {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
