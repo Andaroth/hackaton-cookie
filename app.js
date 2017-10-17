@@ -1,38 +1,60 @@
 var score = 0;
 var multip = 1;
 var cookieClicker = document.getElementById("cookie_clicker");
-/*var buttonClicker = document.getElementsByTagName("button");*/
+var buttonClicker = document.getElementsByTagName("button");
 var button1 = document.getElementById("1");
 var button2 = document.getElementById("2");
 var button3 = document.getElementById("3");
 var button4 = document.getElementById("4");
 
 var shop = [
-    {name:"Pioche",price:10,multi:1.5},
-    {name:"Pelle",price:50,multi:2.5},
-    {name:"Foreuse",price:350,multi:3},
-    {name:"Pelleteuse",price:500,multi:5}
+    {name:"Pioche",price:10,multi:1.5,type:0},
+    {name:"Pelle",price:50,multi:2.5,type:0},
+    {name:"Foreuse",price:350,multi:3,type:1},
+    {name:"Pelleteuse",price:500,multi:5,type:1}
 ];
 
-function buyItem() {
+function buyItem(chercherDans) {
     console.log("buy");
-    var prixItem = shop.price;
-    if (score >= prixItem) {
-        score = score - prixItem;
-        multip = shop.objet.multi;
+    var prixItem = shop[chercherDans].price;
+    
+    console.log("prix de l'item : " + prixItem);
+    
+    if (score >= prixItem) { // Si t'as le fric
+        
+        score = score - prixItem; // Je retire le prix à ton fric
+        
+        multip = multip + shop[chercherDans].multi; // Ensuite, je change le multiplicateur du gain par le multiplicateur de l'item
+        
+        shop[chercherDans].price = shop[chercherDans].price * shop[chercherDans].multi; // Je vais changer le prix de "chercherDans" (son prix * son multi)
+        
     }
+    else {
+        console.log("Saleté de pauvre !");
+        
+    }
+    
+    
 }
 
 function initialize() {
     // Si je clique sur "cookieClicker", 
     cookieClicker.addEventListener("click", function() {
-        score++; // +1 au score
+        score = score + (1 * multip); // +1*multip au score
         console.log("Score = " + score);
     });
     
     button1.addEventListener("click", function() {
-        buyItem("Pioche");
-        // console.log(parametre);
+        buyItem(0);
+    });
+    button2.addEventListener("click", function() {
+        buyItem(1);
+    });
+    button3.addEventListener("click", function() {
+        buyItem(2);
+    });
+    button4.addEventListener("click", function() {
+        buyItem(3);
     });
 }
 initialize(); 
