@@ -1,4 +1,4 @@
-var cookie = document.getElementById("cookie_clicker");
+/*var cookie = document.getElementById("cookie_clicker");
 var score = document.getElementById("score");
 var multipl = document.getElementById("multipl");
 
@@ -52,7 +52,7 @@ var buyItem = function(param) {
     console.log("<< clic on item " + param);
     var item = param;
     console.log("oui");
-    /*if (myMoney >= shop.item.price)
+    if (myMoney >= shop.item.price)
     {
         myMoney = myMoney - (shop.item.price);
         
@@ -67,9 +67,9 @@ var buyItem = function(param) {
                 console.log("Error !!");
                 break;
         }   
-    }*/
+    }
     refresh();
 }
 
 cookie.onclick = cookieCLic();
-document.getElementById("Pioche").onclick = buyItem(Pioche);
+document.getElementById("Pioche").onclick = buyItem(Pioche);*/
