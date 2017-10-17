@@ -1,18 +1,62 @@
+* {
+    box-sizing: border-box;
+}
 body{
-  background-color: #323d5a;
+    background-color: #323d5a;
     color: white;
+    font-family: sans-serif;
+}
+h1 {
+    margin: 0;
+    padding: .66em;
 }
 div {
     display: block;
-    border: 1px solid black;
+    background: rgba(255,255,255,.7);
     text-align: center;
+    max-width: 600px;
+    margin: 15px auto;
+    color: black;
 }
 
+#score, #multiplicator {
+    padding: 10px;
+}
 
 div#cookie {
+    padding: 20px 0;
 }
-img {
+div#cookie * {
+    margin: 15px auto;
+}
+a#cookie_clicker {
+    display: block;
+    transition: all .25s cubic-bezier(.68,-0.55,.27,1.55);
+}
+a#cookie_clicker:hover {
+    transform: rotate(60deg);
+}
+a#cookie_clicker:target {
+    transform: scale(.925);
+}
+
+a, img {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
+}
+
+div#shop ul {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    list-style: none;
+}
+div#shop li {
+    margin: 5px;
+}
+
+button:hover {
+    background: black;
+    color: white;
 }

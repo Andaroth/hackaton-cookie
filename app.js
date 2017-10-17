@@ -64,7 +64,8 @@ function buyItem(chercherDans) {
 
 function initialize() {
     // Si je clique sur "cookieClicker", 
-    cookieClicker.addEventListener("click", function() {
+    cookieClicker.addEventListener("click", function(e) {
+        e.preventDefault();
         score = score + (1 * multip); // + (1*multip au score)
         console.log("Score = " + score);
             refreshDOM();
