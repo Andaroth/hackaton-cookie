@@ -73,8 +73,8 @@ function cookiePop(multip,which) {
     toInsert.setAttribute("class",toSet);
     toInsert.innerHTML = "+ " + 1 * multip + " !";
     playZone.appendChild(toInsert);
-    toInsert.style.animation = "plusoneanim .5s ease-out 1";
-    setTimeout(function(){toDelet.remove();},500);
+    toInsert.style.animation = "plusoneanim 1s ease-out 1";
+    setTimeout(function(){toDelet.remove();},1000);
 }
 
 function initialize() {
