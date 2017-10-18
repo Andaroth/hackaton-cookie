@@ -90,5 +90,10 @@ ul {
 
 a{
   cursor: url('cursor.cur'), auto;
+}
 
+#cookie {
+  background-image: url('giphy.gif');
+  background-repeat: no-repeat;
+  background-position: top;
 }
