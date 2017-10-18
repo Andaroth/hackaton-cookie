@@ -9,10 +9,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("cookiejar.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+    background: #edc27e url("rain.gif");
     color: #552c10;
     font-family: sans-serif;
 }
