@@ -36,14 +36,14 @@ function buyItem(chercherDans) {
     console.log("buy");
     var prixItem = shop[chercherDans].price;
     var typeObjet = shop[chercherDans].type;
-    
+
     console.log("prix de l'item : " + prixItem);
-    
+
     if (score >= prixItem) { // Si t'as le fric
-        
+
         score = score - prixItem; // Je retire le prix à ton fric
         shop[chercherDans].price = shop[chercherDans].price * shop[chercherDans].multi; // Je vais changer le prix de "chercherDans" (son prix * son multi)
-        
+
         if (typeObjet == 0) // SI item de clic
         {
             multip = multip + shop[chercherDans].multi; // Ensuite, je change le multiplicateur du gain par le multiplicateur de l'item
@@ -52,31 +52,32 @@ function buyItem(chercherDans) {
         else {
             multiByTime = multiByTime + shop[chercherDans].multi;
             addByTime(multiByTime); // Je lance le addByTime avec le multi de mon item comme param
-            
+
         }
     } // SI t'as pas le fric
-    else 
+    else
     {
         console.log("Saleté de pauvre !");
-        
+
     }
 }
 
 function initialize() {
-    // Si je clique sur "cookieClicker", 
+    // Si je clique sur "cookieClicker",
     cookieClicker.addEventListener("click", function() {
         score = score + (1 * multip); // + (1*multip au score)
         console.log("Score = " + score);
             refreshDOM();
     });
-    
+
     /*buttonClicker.onclick = function() {
         console.log("oui");
         buyItem(this.value);
     };*/
-    
+
     button1.addEventListener("click", function() {
         buyItem(0);
+        document.getElementById('piocheprix').innerHTML = shop[0].price;
     });
     button2.addEventListener("click", function() {
         buyItem(1);
@@ -88,7 +89,7 @@ function initialize() {
         buyItem(3);
     });
 }
-initialize(); 
+initialize();
 /*var cookie = document.getElementById("cookie_clicker");
 var score = document.getElementById("score");
 var multipl = document.getElementById("multipl");
@@ -135,7 +136,7 @@ var refresh = function() {
 var cookieCLic = function() {
     console.log("<< click on cookie");
     myMoney += (1 * multipClic);
-    
+
     refresh();
 }
 
@@ -146,7 +147,7 @@ var buyItem = function(param) {
     if (myMoney >= shop.item.price)
     {
         myMoney = myMoney - (shop.item.price);
-        
+
         switch (shop.item.type) {
             case 0: // Si type 0
 
@@ -157,7 +158,7 @@ var buyItem = function(param) {
             default:
                 console.log("Error !!");
                 break;
-        }   
+        }
     }
     refresh();
 }
