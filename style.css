@@ -12,6 +12,7 @@
 body {
   background-image: url('coockie.jpg');
   background-size: cover;
+  cursor: url('cursor.cur'), auto;
 }
 
 #score {
@@ -31,6 +32,7 @@ a img:active {
   background-color: #3e8e41;
   box-shadow: 2px 2px #666;
   transform: translateY(4px);
+  cursor: none;
 }
 
 
@@ -52,6 +54,7 @@ img {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
+    cursor: url('cursor.cur'), auto;
 }
 
 
@@ -68,7 +71,8 @@ button {
   padding: 5%;
   font-size: 150%;
   margin-left: 2.5%;
-  margin-right: 2.5%
+  margin-right: 2.5%;
+  cursor: url('cursor.cur'), auto;
 }
 
 button:hover{
@@ -82,4 +86,9 @@ ul {
   padding: 0;
   display: flex;
   width: 100%;
+}
+
+a{
+  cursor: url('cursor.cur'), auto;
+
 }
