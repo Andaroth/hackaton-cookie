@@ -35,10 +35,11 @@ h1 {
     height: 300px;
     margin: 0 auto;
     border-radius: 50%;
-    transition: scale .25s cubic-bezier(.68,-0.55,.27,1.55);
+    transition: all .25s cubic-bezier(.68,-0.55,.27,1.55);
 }
 #cookie_clicker:hover {
     transform: scale(.9);
+    cursor: pointer;
 }
 #cookie_clicker:active {
     transform: scale(.9) translateY(5px);
