@@ -73,6 +73,7 @@ button {
   margin-left: 2.5%;
   margin-right: 2.5%;
   cursor: url('cursor.cur'), auto;
+  border-radius: 20%;
 }
 
 button:hover{
@@ -96,4 +97,5 @@ a{
   background-image: url('giphy.gif');
   background-repeat: no-repeat;
   background-position: top;
+  background-size: cover;
 }
