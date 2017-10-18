@@ -5,6 +5,7 @@ var cookieClicker = document.getElementById("cookie_clicker");
 var buttonClicker = cookieClicker.getElementsByTagName("button");
 
 var scoreZone = document.getElementById("score");
+var playZone = document.getElementById("cookie");
 var multiZone = document.getElementById("multiplicator");
 
 var button1 = document.getElementById("brioche");
@@ -24,6 +25,7 @@ function addByTime(multiTime) {
         score = score + (1*multiTime); // J'add (1 * le multi) au score
         console.log("Argent " + score);
         refreshDOM();
+        cookiePop(multiTime,1);
     }, 1000);
 }
 
@@ -58,13 +60,31 @@ function buyItem(chercherDans) {
     }
 }
 
+function cookiePop(multip,which) {
+    switch (which) {
+        case 1: 
+            var toSet = "plusTime";
+            break;
+        default: 
+            var toSet = "plusOne";
+    }
+    var toInsert = document.createElement("div");
+    var toDelet = toInsert;
+    toInsert.setAttribute("class",toSet);
+    toInsert.innerHTML = "+ " + 1 * multip + " !";
+    playZone.appendChild(toInsert);
+    toInsert.style.animation = "plusoneanim .5s ease-out 1";
+    setTimeout(function(){toDelet.remove();},500);
+}
+
 function initialize() {
     // Si je clique sur "cookieClicker", 
     cookieClicker.addEventListener("click", function(e) {
         e.preventDefault();
         score = score + (1 * multip); // + (1*multip au score)
         console.log("Score = " + score);
-            refreshDOM();
+        refreshDOM();
+        cookiePop(multip);
     });
     
     /*buttonClicker.onclick = function() {
