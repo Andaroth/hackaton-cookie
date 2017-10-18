@@ -14,6 +14,26 @@ body {
   background-size: cover;
 }
 
+#score {
+  background-color: #BD7239;
+  color : white;
+  font-size: 35px;
+}
+
+#multiplicator {
+  background-color: #BD7239;
+  color : white;
+  margin-top: 1%;
+  font-size: 20px;
+}
+
+a img:active {
+  background-color: #3e8e41;
+  box-shadow: 2px 2px #666;
+  transform: translateY(4px);
+}
+
+
 h1 {
   font-size: 300%;
   color: #7F350B;
@@ -34,9 +54,10 @@ img {
     border-radius: 50%;
 }
 
+
 li {
   list-style: none;
-  width: 100%;
+  width: 25%;
   margin-top: 1%;
   margin-bottom: 1%;
 }
@@ -44,11 +65,21 @@ li {
 button {
   background-color: #7F350B;
   color: white;
-  padding: 0.5%;
+  padding: 5%;
+  font-size: 150%;
+  margin-left: 2.5%;
+  margin-right: 2.5%
+}
+
+button:hover{
+  background-color: #BD7239;
+  transition: 0.3s;
 }
 
 ul {
   margin: auto;
   list-style: none;
   padding: 0;
+  display: flex;
+  width: 100%;
 }
