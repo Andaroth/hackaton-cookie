@@ -81,12 +81,15 @@ function initialize() {
     });
     button2.addEventListener("click", function() {
         buyItem(1);
+        document.getElementById('pelleprix').innerHTML = shop[1].price;
     });
     button3.addEventListener("click", function() {
         buyItem(2);
+        document.getElementById('foreuseprix').innerHTML = shop[2].price;
     });
     button4.addEventListener("click", function() {
         buyItem(3);
+        document.getElementById('pelleteuseprix').innerHTML = shop[3].price;
     });
 }
 initialize();
