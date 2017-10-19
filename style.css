@@ -40,16 +40,17 @@ h1 {
     display: block;
     width: auto;
     font-size: 1em;
-    background: firebrick;
-    color: white;
+    font-weight: 700;
+    color: firebrick;
     padding: 10px;
     border-radius: 2px;
     opacity: 0;
+    text-shadow: 0 0 2px white;
 }
 .plusTime {
     top: 250px;
     left: 53%;
-    background: forestgreen;
+    color: forestgreen;
 }
 #cookie_clicker {
     display: block;
