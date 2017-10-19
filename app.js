@@ -22,6 +22,18 @@ function initialize(name) {
         var multiByTime = parseInt(localStorage.getItem("multiByTime"));
         refreshDOM();
         addByTime(multiByTime);
+        if (localStorage.getItem("Brioche") != null) {
+            shop["Brioche"].price = localStorage.getItem("Brioche");
+        }
+        if (localStorage.getItem("Croissant") != null) {
+            shop["Croissant"].price = localStorage.getItem("Croissant");
+        }
+        if (localStorage.getItem("Four") != null) {
+            shop["Four"].price = localStorage.getItem("Four");
+        }
+        if (localStorage.getItem("Lance-flamme") != null) {
+            shop["Lance-flamme"].price = localStorage.getItem("Lance-flamme");
+        }
     }
     
     function cookieSave(saveScore,saveMulti,saveMultiByTime) {
@@ -49,6 +61,7 @@ function initialize(name) {
         if (score >= prixItem) { // Si t'as le fric
             score = score - prixItem; // Je retire le prix à ton fric
             shop[chercherDans].price = shop[chercherDans].price * shop[chercherDans].multi; // Je vais changer le prix de "chercherDans" (son prix * son multi)
+            localStorage.setItem(shop[chercherDans].name,shop[chercherDans].price);
 
             if (typeObjet == 0) // SI item de clic
             {
