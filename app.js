@@ -8,7 +8,12 @@ function initialize(name) {
     var button2 = document.getElementById("croissant");
     var button3 = document.getElementById("four");
     var button4 = document.getElementById("lance-flamme");
-    
+    var shop = [
+        {name:"Brioche",price:10,multi:2,type:0},
+        {name:"Croissant",price:50,multi:3,type:0},
+        {name:"Four",price:350,multi:4,type:1},
+        {name:"Lance-flamme",price:500,multi:5,type:1}
+    ];
     if (localStorage.getItem("score") == null) {
         console.log("You have no cookies :(");
         var score = 0;
@@ -20,20 +25,24 @@ function initialize(name) {
         var score = parseInt(localStorage.getItem("score"));
         var multip = parseInt(localStorage.getItem("multip"));
         var multiByTime = parseInt(localStorage.getItem("multiByTime"));
-        refreshDOM();
-        addByTime(multiByTime);
         if (localStorage.getItem("Brioche") != null) {
-            shop["Brioche"].price = localStorage.getItem("Brioche");
+            shop[0].price = parseInt(localStorage.getItem("Brioche"));
+            document.getElementById("brioche-prix").innerHTML = shop[0].price;
         }
         if (localStorage.getItem("Croissant") != null) {
-            shop["Croissant"].price = localStorage.getItem("Croissant");
+            shop[1].price = parseInt(localStorage.getItem("Croissant"));
+            document.getElementById("croissant-prix").innerHTML = shop[1].price;
         }
         if (localStorage.getItem("Four") != null) {
-            shop["Four"].price = localStorage.getItem("Four");
+            shop[2].price = parseInt(localStorage.getItem("Four"));
+            document.getElementById("four-prix").innerHTML = shop[2].price;
         }
         if (localStorage.getItem("Lance-flamme") != null) {
-            shop["Lance-flamme"].price = localStorage.getItem("Lance-flamme");
+            shop[3].price = parseInt(localStorage.getItem("Lance-flamme"));
+            document.getElementById("lance-flamme-prix").innerHTML = shop[3].price;
         }
+        refreshDOM();
+        addByTime(multiByTime);
     }
     
     function cookieSave(saveScore,saveMulti,saveMultiByTime) {
@@ -94,12 +103,6 @@ function initialize(name) {
         toInsert.style.animation = "plusoneanim 1s ease-out 1";
         setTimeout(function(){toDelet.remove();},1000);
     }
-    var shop = [
-        {name:"Brioche",price:10,multi:2,type:0},
-        {name:"Croissant",price:50,multi:3,type:0},
-        {name:"Four",price:350,multi:4,type:1},
-        {name:"Lance-flamme",price:500,multi:5,type:1}
-    ];
     // Si je clique sur "cookieClicker", 
     cookieClicker.addEventListener("click", function(e) {
         e.preventDefault();
