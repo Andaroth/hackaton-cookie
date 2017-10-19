@@ -98,7 +98,7 @@ function initialize(name) {
         var toInsert = document.createElement("div");
         var toDelet = toInsert;
         toInsert.setAttribute("class",toSet);
-        toInsert.innerHTML = "+ " + 1 * multip + " !";
+        toInsert.innerHTML = "+ " + 1 * multip;
         playZone.appendChild(toInsert);
         toInsert.style.animation = "plusoneanim 1s ease-out 1";
         setTimeout(function(){toDelet.remove();},1000);
