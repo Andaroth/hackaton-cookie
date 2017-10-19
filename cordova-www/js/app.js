@@ -8,6 +8,7 @@ function initialize(name) {
     var button2 = document.getElementById("croissant");
     var button3 = document.getElementById("four");
     var button4 = document.getElementById("lance-flamme");
+    var cookieSc = document.getElementsByClassName("cookieScore");
     var shop = [
         {name:"Brioche",price:10,multi:2,type:0},
         {name:"Croissant",price:50,multi:3,type:0},
