@@ -85,7 +85,7 @@ function initialize(name) {
         } // SI t'as pas le fric
         else 
         {
-            document.querySelector("h2").innerHTML = "Pas d'argent :(";
+            document.querySelector("h2").innerHTML = "Pas assez de cookies :(";
         }
     }
     function cookiePop(multip,which) {
