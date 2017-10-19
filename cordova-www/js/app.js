@@ -2,7 +2,7 @@ function initialize(name) {
     var cookieClicker = document.getElementById("cookie_clicker");
     var buttonClicker = cookieClicker.getElementsByTagName("button");
     var scoreZone = document.getElementById("score");
-    var playZone = document.getElementById("cookie");
+    var playZone = document.getElementById("cookie_zone");
     var multiZone = document.getElementById("multiplicator");
     var button1 = document.getElementById("brioche");
     var button2 = document.getElementById("croissant");
@@ -60,8 +60,8 @@ function initialize(name) {
         }, 1000);
     }
     function refreshDOM() {
-        scoreZone.innerHTML = ("Score : " + score);
-        multiZone.innerHTML = (" <span style='color:firebrick;'>" + multip + "</span> || <span style='color:forestgreen;'>" + multiByTime + "</span> ");
+        scoreZone.innerHTML = ("<img class='cookieScore' alt='Score : ' src='./assets/cookie2.png' /> " + score);
+        multiZone.innerHTML = ("<span style='color:forestgreen;'>par clic " + multip + "</span> <img class='cookieScore' alt='Score : ' src='./assets/cookie2.png' /> <span style='color:firebrick;'>" + multiByTime + " par sec</span> ");
         cookieSave(score,multip,multiByTime);
     }
     function buyItem(chercherDans) {
