@@ -62,7 +62,7 @@ function initialize(name) {
     }
     function refreshDOM() {
         scoreZone.innerHTML = ("<img class='cookieScore' alt='Score : ' src='./assets/cookie2.png' /> " + score);
-        multiZone.innerHTML = ("<span style='color:forestgreen;'>par clic " + multip + "</span> <img class='cookieScore' alt='Score : ' src='./assets/cookie2.png' /> <span style='color:firebrick;'>" + multiByTime + " par sec</span> ");
+        multiZone.innerHTML = ("<span style='color:forestgreen;'>par clic " + multip + "</span> <img class='cookieScore' alt='||' src='./assets/cookie2.png' /> <span style='color:firebrick;'>" + multiByTime + " par sec</span> ");
         cookieSave(score,multip,multiByTime);
     }
     function buyItem(chercherDans) {
