@@ -3,6 +3,7 @@ var multip = 1;
 var multiByTime = 0;
 var cookieClicker = document.getElementById("cookie_clicker");
 var buttonClicker = cookieClicker.getElementsByTagName("button");
+var body = document.querySelector('body');
 
 var scoreZone = document.getElementById("score");
 var multiZone = document.getElementById("multiplicator");
@@ -18,6 +19,20 @@ var shop = [
     {name:"Foreuse",price:350,multi:4,type:1},
     {name:"Pelleteuse",price:500,multi:5,type:1}
 ];
+
+cookieClicker.addEventListener('click',function (e) {
+  console.log(multip);
+  var c = document.createElement('div');
+  c.innerHTML = "+" + multip;
+  cookieClicker.appendChild(c);
+  c.style.position = 'absolute';
+  c.style.top = e.clientY + "px";
+  c.style.left = e.clientX + "px";
+  c.classList.add('test');
+  setTimeout( function (){
+    cookieClicker.removeChild(c);
+  }, 2000)
+});
 
 function addByTime(multiTime) {
     setInterval( function() {
@@ -93,6 +108,8 @@ function initialize() {
     });
 }
 initialize();
+
+
 /*var cookie = document.getElementById("cookie_clicker");
 var score = document.getElementById("score");
 var multipl = document.getElementById("multipl");
