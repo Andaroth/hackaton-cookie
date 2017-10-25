@@ -2,12 +2,13 @@ function initialize(name) {
     var cookieClicker = document.getElementById("cookie_clicker");
     var buttonClicker = cookieClicker.getElementsByTagName("button");
     var scoreZone = document.getElementById("score");
-    var playZone = document.getElementById("cookie");
+    var playZone = document.getElementById("cookie_zone");
     var multiZone = document.getElementById("multiplicator");
     var button1 = document.getElementById("brioche");
     var button2 = document.getElementById("croissant");
     var button3 = document.getElementById("four");
     var button4 = document.getElementById("lance-flamme");
+    var cookieSc = document.getElementsByClassName("cookieScore");
     var shop = [
         {name:"Brioche",price:10,multi:2,type:0},
         {name:"Croissant",price:50,multi:3,type:0},
@@ -60,8 +61,8 @@ function initialize(name) {
         }, 1000);
     }
     function refreshDOM() {
-        scoreZone.innerHTML = ("Score : " + score);
-        multiZone.innerHTML = ("Multiplicateur : " + multip + " || Cookie/s : " + multiByTime);
+        scoreZone.innerHTML = ("<img class='cookieScore' alt='Score : ' src='./assets/cookie2.png' /> " + score);
+        multiZone.innerHTML = ("<span style='color:forestgreen;'>par clic " + multip + "</span> <img class='cookieScore' alt='||' src='./assets/cookie2.png' /> <span style='color:firebrick;'>" + multiByTime + " par sec</span> ");
         cookieSave(score,multip,multiByTime);
     }
     function buyItem(chercherDans) {
@@ -84,7 +85,7 @@ function initialize(name) {
         } // SI t'as pas le fric
         else 
         {
-            multiZone.innerHTML = "Pas d'argent ? Mangez un bon cookie !";
+            document.querySelector("h2").innerHTML = "Pas assez de cookies :(";
         }
     }
     function cookiePop(multip,which) {
@@ -110,6 +111,7 @@ function initialize(name) {
         console.log(">> Score = " + score);
         refreshDOM();
         cookiePop(multip);
+        document.querySelector("h2").innerHTML = "Cliquez sur le cookie !";
     });
     button1.addEventListener("click", function() {
         buyItem(0);
